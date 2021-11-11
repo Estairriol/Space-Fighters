@@ -113,6 +113,7 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+                pygame.quit()
             
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_LCTRL and len(yellowBullets) < MAX_BULLETS:
@@ -131,12 +132,12 @@ def main():
 
         winnerText = ""
         if redHealth <= 0:
-            winnerText = "yellow Wins!"
+            winnerText = "Yellow Wins!"
         if yellowHealth <= 0:
             winnerText = "Red Wins!"
-        
         if winnerText != "":
-            pass #someone won
+            drawWinner(winnerText)
+            break
         
         keysPressed = pygame.key.get_pressed()
         yellowHandleMovement(keysPressed, yellow)
@@ -147,7 +148,7 @@ def main():
 
         drawWindow(red, yellow, redBullets, yellowBullets, redHealth, yellowHealth)
     
-    pygame. quit()
+    main()
 
 if __name__ == "__main__":
     main()
