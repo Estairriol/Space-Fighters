@@ -4,7 +4,7 @@ pygame.font.init()
 
 WIDTH,HEIGHT = 900,500
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("First Gaem")
+pygame.display.set_caption("Space Fighters")
 
 WHITE = (255,255,255)
 BLACK = (0, 0, 0)
